@@ -1,0 +1,6 @@
+/.vscode
+/adobe
+/adobe-dc-pdf-services-sdk-python-samples
+pdfservices-api-credentials.json
+private.key
+/InvoicesData/TestDataSet
