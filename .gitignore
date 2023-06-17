@@ -4,3 +4,4 @@
 pdfservices-api-credentials.json
 private.key
 /InvoicesData/TestDataSet
+__pycache__
