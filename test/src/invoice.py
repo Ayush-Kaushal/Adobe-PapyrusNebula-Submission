@@ -211,7 +211,7 @@ def get_invoice_description():
                         details += text_ele[i][k]
                         k += 1
 
-
+                    # Filtering the details
                     details = details.replace("PAYMENT", "")    # Remove the word "PAYMENT"
                     details = details.replace(customer_names[i], "")    # Remove customer names
                     details = details.replace(customer_phone_nos[i], "")    # Remove customer phone nos.
