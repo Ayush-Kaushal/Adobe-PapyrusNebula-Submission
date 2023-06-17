@@ -4,6 +4,7 @@ from invoice import *
 
 base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Create all the column names
 column_names = ["Bussiness__City", "Bussiness__Country", "Bussiness__Description", "Bussiness__Name", "Bussiness__StreetAddress", 
                 "Bussiness__Zipcode", "Customer__Address__line1", "Customer__Address__line2", "Customer__Email", "Customer__Name", 
                 "Customer__PhoneNumber", "Invoice__BillDetails__Name", "Invoice__BillDetails__Quantity", "Invoice__BillDetails__Rate", 
@@ -11,15 +12,17 @@ column_names = ["Bussiness__City", "Bussiness__Country", "Bussiness__Description
 
 ExtractedData_df = pd.DataFrame(columns=column_names)
 
-
+# Get business information
 business_details = get_business_details()
 
+# Get customer information
 customer_add_line1 = get_customer_add1()
 customer_add_line2 = get_customer_add2()
 customer_emails = get_customer_email()
 customer_names = get_customer_names()
 customer_phone_nos = get_customer_phone_no()
 
+# Get invoice information
 invoice_bill_details = get_invoice_bill_details()
 invoice_desc = get_invoice_description()
 invoice_due_dates = get_invoice_due_date()
@@ -27,8 +30,10 @@ invoice_issue_dates = get_invoice_issue_date()
 invoice_numbers = get_invoice_number()
 invoice_tax_rates = get_invoice_tax()
 
-for i in range(100):
 
+# Iterate for all the input PDF files
+for i in range(100):
+    # For each column of each test dataset file
     Bussiness__City = business_details["Bussiness__City"][i]
     Bussiness__Country = business_details["Bussiness__Country"][i]
     Bussiness__Description = business_details["Bussiness__Description"][i]
@@ -48,6 +53,7 @@ for i in range(100):
     Invoice__Number = invoice_numbers[i]
     Invoice__Tax = invoice_tax_rates[i]
 
+    # For every product in bill details create a new entry
     for j in range(int(len(invoice_bill_details[i]["Invoice__BillDetails__Name"]))):
 
         Invoice__BillDetails__Name = invoice_bill_details[i]["Invoice__BillDetails__Name"][j]
@@ -82,10 +88,11 @@ for i in range(100):
 
 
 
-print(ExtractedData_df.head())
+# print(ExtractedData_df.head())
 
 ExtractedData_Path = os.path.join(base_path, 'ExtractedData/ExtractedData.csv')
 
+# Saving the extracted data 
 ExtractedData_df.to_csv(ExtractedData_Path, index=False)
 
 

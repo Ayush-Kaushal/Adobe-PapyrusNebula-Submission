@@ -1,6 +1,5 @@
 import os
 import json
-import pandas as pd
 
 base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -12,7 +11,7 @@ output_path = os.path.join(base_path, 'output')
 # Extracting all the text elements from the structuredData file
 
 def create_text_dict():
-    text_ele = {}
+    text_ele = {}    # Dictionary to store only 'Text' elements from all the PDF files
 
     for i, data in enumerate(os.listdir(output_path)):
         # tables_path = os.path.join(output_path, f'TextTableWithTableStructure_{i}/tables')

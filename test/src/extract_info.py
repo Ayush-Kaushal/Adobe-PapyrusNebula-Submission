@@ -1,5 +1,5 @@
-"""Extracting Text, Table Elements with Renditions and CSV's of Table Elements 
-using extract_txt_table_info_with_table_structure_from_pdf.py. The output is a 
+"""Extracting Text, Table Elements with Renditions and CSV's of Table Elements. Code used is from 
+extract_txt_table_info_with_table_structure_from_pdf.py. The output is a 
 zip containing the structured information along with renditions."""
 
 import logging
