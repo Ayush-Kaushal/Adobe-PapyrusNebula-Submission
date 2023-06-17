@@ -82,10 +82,10 @@ for i in range(100):
 
 
 
-print(ExtractedData_df.shape)
+print(ExtractedData_df.head())
 
-# ExtractedData_Path = os.path.join(base_path, 'ExtractedData/ExtractedData.csv')
+ExtractedData_Path = os.path.join(base_path, 'ExtractedData/ExtractedData.csv')
 
-# ExtractedData_df.to_csv(ExtractedData_Path, index=False)
+ExtractedData_df.to_csv(ExtractedData_Path, index=False)
 
 
